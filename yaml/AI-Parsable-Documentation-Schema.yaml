@@ -1,0 +1,178 @@
+# AI-Parsable Documentation Schema
+
+purpose: >
+  This schema defines the structure, conventions, and patterns for creating
+  machine-parsable documentation optimized for AI consumption. It serves
+  as both a meta-documentation example and a template for AIs to follow
+  when creating structured documentation for any domain.
+
+audience: ["AI agent", "LLM", "code generator", "autonomous system"]
+output_target: "Documentation that can be directly consumed by AI systems"
+
+documentation_patterns:
+  structure:
+    root_index:
+      required_fields:
+        - purpose: "string - Clear statement of what the documentation covers"
+        - sections: "object - Major categories with their files"
+        - usage_guidelines: "string - How to use the documentation"
+      recommended_fields:
+        - audience: "array - Intended consumers"
+        - revision_policy: "string - Update guidelines"
+    
+    section_index:
+      required_fields:
+        - purpose: "string - Section's specific purpose"
+        - structure: "array/object - Files in this section"
+      recommended_fields:
+        - audience: "array - Section-specific audience if different"
+    
+    content_document:
+      required_fields:
+        - purpose: "string - Document's specific purpose"
+        - main_content: "object - Domain-specific content structure"
+      recommended_fields:
+        - validation_criteria: "array/object - How to verify implementation"
+        - examples: "array/object - Implementation examples"
+
+  field_types:
+    scalar_values:
+      pattern: "key: value"
+      example: "version: '1.0'"
+      usage: "For simple, single values"
+    
+    block_text:
+      pattern: |
+        key: >
+          Multi-line text with
+          newlines folded into spaces
+        key2: |
+          Text with preserved
+          line breaks
+      usage: "For longer text that needs multiple lines"
+    
+    lists:
+      pattern: |
+        items:
+          - "Item 1"
+          - "Item 2"
+        complex_items:
+          - name: "Name"
+            description: "Description"
+          - name: "Name 2"
+            description: "Description 2"
+      usage: "For sequential collections of items"
+    
+    mappings:
+      pattern: |
+        mapping:
+          key1: "Value 1"
+          key2: "Value 2"
+      usage: "For key-value associations"
+    
+    nested_structures:
+      pattern: |
+        parent:
+          child1:
+            grandchild: "value"
+          child2:
+            grandchild: "value"
+      usage: "For hierarchical data organization"
+
+  naming_conventions:
+    files: "kebab-case.yaml"
+    directories: "kebab-case"
+    fields: "snake_case"
+    values:
+      strings: "Clear, descriptive text"
+      booleans: "true/false, not yes/no or 1/0"
+      lists: "Consistent item format throughout"
+
+standard_document_template: |
+  # Document Template
+  purpose: >
+    Clear statement of this document's purpose and scope.
+
+  audience: ["primary audience", "secondary audience"]
+
+  # Main content - structure depends on document type
+  content:
+    # Domain-specific structure here
+    section1:
+      item1: "value"
+      item2: "value"
+
+  # How to use this specific document
+  usage_guidelines: |
+    - First guideline
+    - Second guideline
+
+  # When and how to update this document
+  revision_policy: >
+    Guidelines for maintaining this document.
+
+best_practices:
+  - principle: "Explicit is better than implicit"
+    description: "State everything directly; don't rely on inference"
+  
+  - principle: "Structure over prose"
+    description: "Use structured data patterns instead of paragraphs"
+  
+  - principle: "Consistent patterns"
+    description: "Use the same patterns for similar concepts throughout"
+  
+  - principle: "Complete over concise"
+    description: "Prioritize completeness over brevity"
+  
+  - principle: "Self-describing"
+    description: "Documentation should explain its own organization"
+  
+  - principle: "Validation-ready"
+    description: "Include criteria for validating implementation"
+
+content_organization_strategies:
+  - strategy: "Domain decomposition"
+    description: "Break domain into logical, non-overlapping sections"
+    when_to_use: "For large, complex domains"
+  
+  - strategy: "Progressive disclosure"
+    description: "Start with core concepts, then add details in referenced documents"
+    when_to_use: "For domains with varying levels of complexity"
+  
+  - strategy: "Task-oriented"
+    description: "Organize by tasks AI will perform with the documentation"
+    when_to_use: "For process-heavy domains"
+
+application_process:
+  - step: "Start with domain analysis"
+    description: "Identify key concepts, relationships, and requirements"
+  
+  - step: "Create root index"
+    description: "Define main structure and navigation paths"
+  
+  - step: "Develop section indices"
+    description: "Break down each major section"
+  
+  - step: "Create detailed content documents"
+    description: "Fill in specific requirements using appropriate patterns"
+  
+  - step: "Validate cross-references"
+    description: "Ensure all references between documents are correct"
+  
+  - step: "Verify completeness"
+    description: "Check that all aspects of the domain are documented"
+
+revision_strategy:
+  principles:
+    - "Update index files when adding or removing documents"
+    - "Maintain consistent formatting across all documents"
+    - "Clearly mark changes that break compatibility"
+    - "Version all documents together as a corpus"
+
+usage_guidelines: |
+  - Use this schema as a template for creating AI-parsable documentation
+  - Adapt the patterns to fit the specific domain being documented
+  - Always prioritize explicit structure over natural language
+  - Include validation criteria for all requirements
+  - Ensure documentation is self-contained and doesn't rely on external knowledge
+  - Test documentation with target AI systems to verify understanding

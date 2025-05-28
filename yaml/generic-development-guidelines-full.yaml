@@ -1,0 +1,61 @@
+purpose: >
+  Comprehensive, techstack-independent rules, standards, and best practices for application development. Intended as a complete reference for AI-driven or human development.
+main_content:
+  overview_and_usage:
+    - Guidelines are mandatory for all projects using this techstack.
+    - Review all documents before starting development.
+    - Follow guidelines in implementation and code reviews.
+    - Propose and document updates as needed.
+    - Periodically review and update guidelines.
+  coding_rules_best_practices:
+    - Apply SOLID principles for maintainability and extensibility.
+    - Require unit and integration tests for all functionality.
+    - Separate data, business logic, and UI layers.
+    - Use repository patterns for data access.
+    - Extract business logic to pure functions/modules.
+    - UI components focus on rendering and event routing.
+    - Decompose components/modules by single responsibility.
+    - Consistent state management per domain/feature.
+    - Inject dependencies for testability.
+    - Standardize event naming and handlers.
+    - Centralize form logic and validation.
+    - Implement global feedback/notification system.
+    - Use adapters/wrappers for API integration.
+    - Design for offline-first and synchronization.
+  registry_feature_metadata_patterns:
+    - Use centralized, type-safe registries for features, field types, and metadata.
+    - Support dynamic registration, error handling, and plugin systems.
+    - Implement field registries and resolvers for UI decoupling.
+    - Maintain extensible meta-registries for table metadata.
+    - Register features with unique IDs and metadata.
+  component_feature_modularity:
+    - Keep components/features small, focused, and self-contained.
+    - Use clear naming conventions and document exports.
+    - Expose only necessary APIs; encapsulate internals.
+    - Write unit tests and handle errors gracefully.
+    - Maintain consistency and periodically refactor.
+  data_specification_table_structure:
+    - Define field types per techstack with explicit constraints.
+    - Require RecordIdent (unique, PK) and RecordVersion (versioning) for all tables.
+    - Prohibit generic 'ID' fields; use explicit identifiers.
+    - Specify optional fields (Inactivo, Codigo, Serie, Numero, empresa, ejercicio, Descripcion, Observaciones) and their rules.
+    - Use explicit foreign keys for relationships.
+  data_synchronization:
+    - Require sync fields (SyncStatus, LastSyncDate, etc.) for all tables.
+    - Enforce local-first, unique IDs, change tracking, and conflict detection.
+    - Support automatic/manual conflict resolution and atomic migrations.
+  data_migration_versioning:
+    - Ensure backward compatibility and atomic migrations.
+    - Maintain migration logs and schema versioning.
+    - Use progressive schema updates and data transformers.
+    - Verify data integrity and references.
+  registry_pluggability_design_patterns:
+    - Use pluggable editor registries with type safety and namespacing.
+    - Centralize registration/discovery for decoupling and extensibility.
+    - Apply adapter, factory, and dependency injection patterns.
+    - Favor interface-based design for contracts and testability.
+validation_criteria:
+  - All requirements must be implemented as described.
+  - Tests must verify compliance with each rule.
+examples:
+  - See main_content sections for implementation details and code snippets. 

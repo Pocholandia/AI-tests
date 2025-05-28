@@ -1,0 +1,55 @@
+purpose: >
+  Universal, techstack-independent rules, standards, and best practices for application development. Serves as a foundation for AI-driven or human development.
+main_content:
+  core_principles:
+    - Maintainability and extensibility in all designs
+    - Separation of concerns: data, business logic, UI
+    - Single responsibility for all components/modules
+    - Pluggability and extensibility via registries
+    - Type safety and clear contracts
+    - Centralized configuration and registration
+    - Consistent naming and structure
+  coding_standards_best_practices:
+    - Apply SOLID principles
+    - Require unit and integration tests
+    - Use layered architecture (data, business, UI)
+    - Decompose by single responsibility
+    - Consistent state management
+    - Dependency injection for testability
+    - Standardize events and forms
+    - Implement global feedback system
+    - Use adapters for API integration
+    - Design for offline-first and sync
+  data_management_table_structure:
+    - Require unique identifiers (RecordIdent) and versioning (RecordVersion)
+    - Prohibit generic 'ID' fields
+    - Specify optional fields and their rules
+    - Use explicit foreign keys for relationships
+  data_synchronization_migration:
+    - Require sync fields for all tables
+    - Enforce local-first, unique IDs, change tracking, conflict detection
+    - Support automatic/manual conflict resolution and atomic migrations
+    - Maintain migration logs and schema versioning
+  registry_design_patterns:
+    - Centralize registration/discovery (registry pattern)
+    - Use adapters, dependency injection, factory, and interface-based design
+    - Pluggable editor registry with fallback
+  testing_standards:
+    - Place tests alongside code
+    - Use unit, component, and integration tests
+    - Mock dependencies and enforce coverage
+    - Automate tests in CI/CD
+  documentation_maintenance:
+    - Keep documentation up-to-date
+    - Log deviations and review periodically
+  best_practices_summary:
+    - Register and document all pluggable components
+    - Use clear, namespaced keys
+    - Favor explicit contracts and interfaces
+    - Design for testability, maintainability, extensibility
+    - Prioritize user feedback, error handling, offline support
+validation_criteria:
+  - All requirements must be implemented as described.
+  - Tests must verify compliance with each rule.
+examples:
+  - See main_content sections for implementation details and code snippets. 
