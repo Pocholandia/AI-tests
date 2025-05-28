@@ -1,0 +1,9 @@
+purpose: >
+  Defines data specification and table structure rules for generic application development.
+main_content:
+  field_types:
+    - Define field types per techstack with explicit constraints.
+    - Require RecordIdent (unique, PK) and RecordVersion (versioning) for all tables.
+    - Prohibit generic 'ID' fields; use explicit identifiers.
+    - Specify optional fields (Inactivo, Codigo, Serie, Numero, empresa, ejercicio, Descripcion, Observaciones) and their rules.
+    - Use explicit foreign keys for relationships. 

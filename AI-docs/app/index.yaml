@@ -1,0 +1,21 @@
+purpose: >
+  Index for application-specific development guidelines for Preventa. Provides navigation and overview of all app-specific rules, patterns, and best practices.
+structure:
+  core_entities_data_model: core-entities-data-model.yaml
+  ui_ux_patterns: ui-ux-patterns.yaml
+  navigation_flows: navigation-flows.yaml
+  validation_business_rules: validation-business-rules.yaml
+  error_handling_feedback: error-handling-feedback.yaml
+  offline_synchronization: offline-synchronization.yaml
+  feature_organization: feature-organization.yaml
+  registry_system_integration: registry-system-integration.yaml
+  demo_data_wipe: demo-data-wipe.yaml
+  testing_acceptance: testing-acceptance.yaml
+usage_guidelines: |
+  - Use this index to navigate to application-specific documentation.
+  - Each section provides actionable rules, patterns, and examples for Preventa.
+  - Cross-reference generic and techstack guidelines as needed.
+audience:
+  - Preventa developer
+  - AI agent
+  - documentation consumer 

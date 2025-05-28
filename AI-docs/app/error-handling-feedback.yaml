@@ -1,0 +1,31 @@
+purpose: >
+  Describes error management and user feedback patterns in the Preventa application.
+main_content:
+  general_principles:
+    - Communicate all errors clearly to the user
+    - Log errors internally with context
+    - Offer recovery options when possible
+    - Prevent data loss on error
+    - Classify errors by type and severity
+  error_types_handling:
+    validation_errors:
+      - Managed in forms
+      - Show specific messages next to each field
+    application_errors:
+      - Use try/catch in services and containers
+      - Show descriptive snackbar/toast messages
+      - Log errors with context
+    network_sync_errors:
+      - Handle in sync layer with automatic detection
+      - Show sync status indicator and retry option
+      - Use snackbar for sync errors/conflicts
+  notification_service_example: |
+    See original markdown for TypeScript code example.
+  error_boundary_example: |
+    See original markdown for TypeScript code example.
+  offline_error_handling:
+    - Detect offline errors and warn the user
+    - Save changes locally and retry when online
+    - Register retry functions for failed syncs
+  references:
+    - offline_synchronization: offline-synchronization.yaml 

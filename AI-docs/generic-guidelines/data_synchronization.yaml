@@ -1,0 +1,7 @@
+purpose: >
+  Defines data synchronization rules for generic application development.
+main_content:
+  synchronization:
+    - Require sync fields (SyncStatus, LastSyncDate, etc.) for all tables.
+    - Enforce local-first, unique IDs, change tracking, and conflict detection.
+    - Support automatic/manual conflict resolution and atomic migrations. 

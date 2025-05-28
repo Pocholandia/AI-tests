@@ -1,0 +1,25 @@
+purpose: >
+  Documents testing tools, patterns, and quality practices for frontend and data layers.
+main_content:
+  tools:
+    - Jest for unit and integration testing
+    - React Testing Library for component and UI tests
+  patterns:
+    - Test rendering, empty states, loading, and filter combinations
+    - Test interaction of hooks (e.g., useForm, useFilter) and Contexts
+    - Use in-memory databases for integration tests involving data access
+    - Mock database layers when testing components that use the database
+    - Reset database state between tests
+  quality_practices:
+    - Enforce strict coding standards with ESLint and Prettier
+    - Run npm run lint and npm run format regularly
+    - Use commit hooks to prevent code that doesn't pass linting
+    - Write unit tests for all components and business logic
+    - Document component props and usage examples
+    - Review and refactor components periodically for performance and maintainability
+usage_guidelines: |
+  - Use Jest and React Testing Library for all new tests
+  - Enforce linting and formatting before commits
+  - Write and maintain tests for all business logic and UI
+revision_policy: >
+  Update when introducing new testing tools, patterns, or quality standards. 

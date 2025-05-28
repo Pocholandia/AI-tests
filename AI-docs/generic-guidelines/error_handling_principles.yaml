@@ -1,0 +1,9 @@
+purpose: >
+  Provides error handling principles for generic application development.
+main_content:
+  error_handling:
+    - Communicate all errors clearly to the user.
+    - Log errors internally with context.
+    - Offer recovery options when possible.
+    - Prevent data loss on error.
+    - Classify errors by type and severity. 

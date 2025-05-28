@@ -1,0 +1,45 @@
+purpose: >
+  Details validation rules and business logic specific to the Preventa application. Must be enforced in both UI and data layer.
+main_content:
+  general_validation:
+    - Required fields must not be empty or whitespace
+    - String fields: max lengths per entity
+    - Numeric fields: valid numbers, ranges, decimal precision
+    - Date fields: ISO 8601 UTC format
+    - All string fields trimmed before validation/storage
+  entity_specific_validation:
+    cliente:
+      - Codigo: 1-20 chars, alphanumeric, unique
+      - Descripcion: 1-100 chars
+      - Contacto: up to 100 chars
+      - Telefono: up to 20 chars, valid format
+      - Email: valid email format
+      - Web: valid URL format
+      - IDtarifa: must reference valid Tarifa if present
+      - Inactivo: boolean
+    producto:
+      - Codigo: 1-20 chars, alphanumeric, unique
+      - Descripcion: 1-100 chars
+      - Precio: >0, max 2 decimals
+      - IVA: >=0, max 2 decimals
+      - Inactivo: boolean
+    tarifa:
+      - Codigo: 1-20 chars, alphanumeric, unique
+      - Descripcion: 1-100 chars
+      - Inactivo: boolean
+    tarifas_lineas:
+      - IDtarifa, IDproducto: required, must reference valid entities
+      - Precio: required, >0, max 2 decimals
+      - Unique constraint: (IDtarifa, IDproducto)
+    pedido:
+      - Numero: autoincrement, unique
+      - IDcliente: required, must reference valid Cliente
+      - FechaHora: auto-generated, immutable
+    pedidos_lineas:
+      - IDpedido, IDproducto: required, must reference valid entities
+      - Cantidad: required, >0
+      - Precio: required, >0, max 2 decimals
+  business_logic_examples:
+    - See original markdown for TypeScript code snippets.
+  references:
+    - core_entities_data_model: core-entities-data-model.yaml 

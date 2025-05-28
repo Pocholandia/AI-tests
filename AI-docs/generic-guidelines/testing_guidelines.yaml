@@ -1,0 +1,11 @@
+purpose: >
+  Provides testing guidelines for generic application development.
+main_content:
+  testing:
+    - Place tests alongside the code they test, using clear naming conventions.
+    - Use unit, component, and integration tests.
+    - Mock dependencies and isolate tests to avoid cross-test interference.
+    - Set and enforce minimum coverage thresholds for different code areas.
+    - Use realistic test data and factories/fixtures for consistency.
+    - Automate tests before commits and in CI/CD pipelines.
+    - Reject code that fails tests. 

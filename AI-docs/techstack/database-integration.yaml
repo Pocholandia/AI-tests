@@ -1,0 +1,51 @@
+purpose: >
+  Documents database integration strategies, tools, and best practices for browser-based and offline-first applications.
+main_content:
+  sqlite_wasm_opfs:
+    - Use SQLite compiled to WebAssembly (WASM) with Origin-Private File System (OPFS) for browser persistence
+    - Initialization flow: load WASM module, initialize database, set up schema/migrations
+    - Use SQLiteService as a singleton for DB connection and queries
+    - DatabaseInitializer handles schema creation and migrations
+    - Extend BaseRepository for each entity, implementing CRUD and custom queries
+    - Use prepared statements and batch operations for performance
+    - Handle errors gracefully and provide user-friendly messages
+  dexie_indexeddb:
+    - Use Dexie.js for local storage and offline-first data
+    - Organize tables with required sync fields (SyncStatus, etc.)
+    - Schema migrations must be atomic and tracked
+    - Use repository pattern for data access
+  schema_generation_from_models:
+    - Define TypeScript interfaces in models.ts for each entity
+    - Create a schema.ts mapping model properties to SQL column types
+    - Keep schema and model in sync; required fields in interface must be NOT NULL in schema
+    - Map custom types (e.g., tipoID) to their underlying primitives in schema
+  example_model_to_schema: |
+    // models.ts
+    export interface ICliente {
+      id: string;
+      nombre: string;
+      direccion?: string;
+      telefono?: string;
+      createdAt: number;
+    }
+    // schema.ts
+    export const clienteSchema = {
+      id: 'TEXT PRIMARY KEY',
+      nombre: 'TEXT NOT NULL',
+      direccion: 'TEXT',
+      telefono: 'TEXT',
+      createdAt: 'INTEGER NOT NULL'
+    };
+  best_practices:
+    - Always use the database initializer at app startup
+    - Use one repository per entity
+    - Keep business logic in the repository layer
+    - Use transactions for complex operations
+    - Index frequently queried columns
+    - Test with in-memory DB for integration tests
+usage_guidelines: |
+  - Use SQLite WASM or Dexie.js as appropriate for persistence
+  - Keep schema and models in sync
+  - Use repository pattern for all data access
+revision_policy: >
+  Update when changing database technology, schema patterns, or best practices. 

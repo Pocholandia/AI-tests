@@ -1,0 +1,10 @@
+purpose: >
+  Describes project and feature organization for generic application development.
+main_content:
+  organization:
+    - Organize code by domain feature.
+    - Keep all code for a feature together.
+    - Only import from other features via their public API.
+    - Encapsulate internal logic; export only what is needed.
+    - Use named exports, avoid default exports.
+    - Register each feature with the meta-registry. 

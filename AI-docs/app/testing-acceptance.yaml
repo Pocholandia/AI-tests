@@ -1,0 +1,21 @@
+purpose: >
+  Describes testing requirements and acceptance criteria specific to the Preventa application.
+main_content:
+  acceptance_criteria:
+    - Create, edit, delete orders, clients, products using modal forms with correct data and validations
+    - Data persists after closing and reopening the app
+    - Clients and products can be associated with orders
+    - Orders can be filtered by client, product, date, price, free text
+    - Clients can be searched and their associated orders viewed
+    - Order lines and entire orders can be deleted with confirmation
+    - Editing an order reflects changes correctly
+    - UI is clear, responsive, provides visual feedback
+    - Validations and error messages are shown as appropriate
+  testing_strategy:
+    - Unit tests for business logic, validation, store actions (target: 80% coverage)
+    - Component tests for forms, lists, interactive components (target: 70% coverage)
+    - End-to-end tests for main user flows (CRUD, filtering, sync, demo data)
+  unit_test_example: |
+    See original markdown for Jest code example.
+  component_test_example: |
+    See original markdown for React Testing Library code example. 

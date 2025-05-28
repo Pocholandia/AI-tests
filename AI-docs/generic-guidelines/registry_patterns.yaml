@@ -1,0 +1,9 @@
+purpose: >
+  Describes registry, feature, and metadata patterns for generic application development.
+main_content:
+  registry_patterns:
+    - Use centralized, type-safe registries for features, field types, and metadata.
+    - Support dynamic registration, error handling, and plugin systems.
+    - Implement field registries and resolvers for UI decoupling.
+    - Maintain extensible meta-registries for table metadata.
+    - Register features with unique IDs and metadata. 

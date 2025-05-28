@@ -1,0 +1,37 @@
+purpose: >
+  Describes navigation structure and main user interaction flows in the Preventa application.
+main_content:
+  main_navigation_structure:
+    - Top bar: section title, sync status, overflow menu
+    - Bottom navigation: tabs for Pedidos, Clientes, Productos, Tarifas
+    - FAB: contextual, present in all main sections
+    - Overflow menu: sync, generate demo data, wipe data, about
+  main_user_flows:
+    pedidos:
+      - Initially empty; user must apply filters
+      - Filter panel: Cliente, date range, total range
+      - List: click to view details; FAB to create
+      - Detail: view, edit, delete; see order lines
+      - Edit/Create: modal/full-screen; select client, add/edit lines, auto-calculate total
+    clientes:
+      - Search bar at top; list shows code, description, sync status
+      - FAB to create
+      - Detail: view, edit, delete; see associated orders
+      - Edit/Create: modal/full-screen; validate fields; assign optional tarifa
+    productos:
+      - Search bar at top; list shows code, description, price, IVA
+      - FAB to create
+      - Detail: view, edit, delete; see associated tarifas
+      - Edit/Create: modal/full-screen; validate fields
+    tarifas:
+      - Search bar at top; list shows code, description
+      - FAB to create
+      - Detail: view, edit, delete; editable grid of TarifasLineas
+      - On delete: offer to transfer, clear, or cancel if in use
+  transversal_flows:
+    - Sync: indicator always visible; manual sync via menu; conflict dialog if needed
+    - Error/validation: consistent feedback via snackbar, dialogs, field errors
+  example_pedidos_flow_diagram: |
+    See original markdown for mermaid diagram.
+  references:
+    - ui_ux_patterns: ui-ux-patterns.yaml 

@@ -1,0 +1,39 @@
+purpose: >
+  Describes the feature-based organization pattern for modular, maintainable codebases.
+main_content:
+  directory_structure:
+    - Each feature/domain is encapsulated in its own directory under src/features/
+    - Typical feature structure includes:
+        components/: UI components specific to the feature
+        models.ts: Data models and interfaces
+        store.ts: State management (Zustand store)
+        schema.ts: Database schema mapping (if applicable)
+        index.ts: Public API and meta-registry registration
+  feature_index_pattern:
+    - Re-export model types, store, and components for external use
+    - Register table metadata with the meta-registry in index.ts
+    - Example registration:
+        registerTable('clientes', {
+          labelSingular: 'Cliente',
+          labelPlural: 'Clientes',
+          describe: '{$cliente.nombre} ({$cliente.email})',
+          defaultColumns: ['nombre', 'direccion', 'telefono', 'email', 'IDtarifa'],
+          components: {
+            list: ClientesList,
+            view: ClienteView,
+            edit: ClienteEdit,
+          },
+        });
+  benefits:
+    - Keeps registration code and implementation together
+    - Promotes modularity and maintainability
+    - Enables dynamic component discovery and UI adaptation
+  best_practices:
+    - Keep feature logic, models, and UI together
+    - Register all relevant metadata and components at feature initialization
+    - Use the meta-registry for dynamic UI and metadata management
+usage_guidelines: |
+  - Organize all new features using this pattern
+  - Register metadata and components in each feature's index.ts
+revision_policy: >
+  Update when changing feature organization patterns or meta-registry usage. 

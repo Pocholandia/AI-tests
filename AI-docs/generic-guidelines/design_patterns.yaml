@@ -1,0 +1,8 @@
+purpose: >
+  Describes registry, pluggability, and design patterns for generic application development.
+main_content:
+  design_patterns:
+    - Use pluggable editor registries with type safety and namespacing.
+    - Centralize registration/discovery for decoupling and extensibility.
+    - Apply adapter, factory, and dependency injection patterns.
+    - Favor interface-based design for contracts and testability. 

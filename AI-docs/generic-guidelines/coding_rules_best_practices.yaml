@@ -1,0 +1,18 @@
+purpose: >
+  Consolidates coding rules and best practices for generic, techstack-independent development.
+main_content:
+  coding_rules:
+    - Apply SOLID principles for maintainability and extensibility.
+    - Require unit and integration tests for all functionality.
+    - Separate data, business logic, and UI layers.
+    - Use repository patterns for data access.
+    - Extract business logic to pure functions/modules.
+    - UI components focus on rendering and event routing.
+    - Decompose components/modules by single responsibility.
+    - Consistent state management per domain/feature.
+    - Inject dependencies for testability.
+    - Standardize event naming and handlers.
+    - Centralize form logic and validation.
+    - Implement global feedback/notification system.
+    - Use adapters/wrappers for API integration.
+    - Design for offline-first and synchronization. 

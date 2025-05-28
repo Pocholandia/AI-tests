@@ -1,0 +1,34 @@
+purpose: >
+  Establishes standards and best practices for UI components, visual guidelines, and accessibility in the tech stack.
+main_content:
+  visual_ux_guidelines:
+    - Use Material UI (MUI) components and theming (Theme.spacing(1) = 8px)
+    - Layout with MUI <Grid>, <Box> for grid consistency
+    - Follow VIBE coding principles adapted for React + TypeScript + MUI
+  component_structure:
+    - Presentation components in src/components/
+    - Container components in src/containers/
+    - Use provided component templates for consistency
+    - Limit each component to a single responsibility
+    - Max 300 lines per JSX/TSX file
+  standard_components_patterns:
+    - Generic filters: EntityFilter.tsx, DateRangeFilter.tsx, NumericRangeFilter.tsx, EntitySelectFilter.tsx
+    - Publish typings for filters in src/types/filters.ts
+    - Use generic and entity-specific hooks for forms (e.g., useForm<T>(), useClienteForm)
+    - Implement NotificationContext with MUI <Snackbar> and useNotification()
+  accessibility:
+    - Use @mui/utils/useIsFocusVisible and aria-* attributes
+    - Custom components must extend accessibility props
+    - Maintain minimum contrast and keyboard navigation
+  anti_patterns:
+    - Avoid zombie screens (stale state dependencies)
+    - Prevent mass rerenders with correct use of key, memo, and selectors
+  testing:
+    - Use Jest + React Testing Library
+    - Test rendering, empty states, loading, filter combinations, and hook/context interactions
+usage_guidelines: |
+  - Use MUI components and theming for all UI
+  - Follow accessibility and testing practices
+  - Use component templates for new components
+revision_policy: >
+  Update when introducing new UI standards, accessibility requirements, or component patterns. 

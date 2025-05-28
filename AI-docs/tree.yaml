@@ -1,0 +1,47 @@
+root:
+  index: index.yaml
+  sections:
+    application_specific:
+      index: app/index.yaml
+      structure:
+        core_entities_data_model: app/core-entities-data-model.yaml
+        ui_ux_patterns: app/ui-ux-patterns.yaml
+        navigation_flows: app/navigation-flows.yaml
+        validation_business_rules: app/validation-business-rules.yaml
+        error_handling_feedback: app/error-handling-feedback.yaml
+        offline_synchronization: app/offline-synchronization.yaml
+        feature_organization: app/feature-organization.yaml
+        registry_system_integration: app/registry-system-integration.yaml
+        demo_data_wipe: app/demo-data-wipe.yaml
+        testing_acceptance: app/testing-acceptance.yaml
+    generic_guidelines:
+      index: generic-guidelines/index.yaml
+      structure:
+        overview_and_usage: generic-guidelines/overview_and_usage.yaml
+        coding_rules_best_practices: generic-guidelines/coding_rules_best_practices.yaml
+        registry_patterns: generic-guidelines/registry_patterns.yaml
+        component_feature_modularity: generic-guidelines/component_feature_modularity.yaml
+        data_specification_table_structure: generic-guidelines/data_specification_table_structure.yaml
+        data_synchronization: generic-guidelines/data_synchronization.yaml
+        data_migration_versioning: generic-guidelines/data_migration_versioning.yaml
+        design_patterns: generic-guidelines/design_patterns.yaml
+        testing_guidelines: generic-guidelines/testing_guidelines.yaml
+        meta_analysis_classification: generic-guidelines/meta_analysis_classification.yaml
+        naming_documentation_conventions: generic-guidelines/naming_documentation_conventions.yaml
+        accessibility_guidelines: generic-guidelines/accessibility_guidelines.yaml
+        error_handling_principles: generic-guidelines/error_handling_principles.yaml
+        project_feature_organization: generic-guidelines/project_feature_organization.yaml
+        ui_component_api_documentation: generic-guidelines/ui_component_api_documentation.yaml
+        general_best_practices: generic-guidelines/general_best_practices.yaml
+    techstack_guidelines:
+      index: techstack/index.yaml
+      structure:
+        frontend_architecture: techstack/frontend-architecture.yaml
+        ui_components: techstack/ui-components.yaml
+        state_management: techstack/state-management.yaml
+        data_modeling_sync: techstack/data-modeling-sync.yaml
+        registry_plugin_systems: techstack/registry-plugin-systems.yaml
+        database_integration: techstack/database-integration.yaml
+        feature_organization: techstack/feature-organization.yaml
+        testing_quality: techstack/testing-quality.yaml
+        meta_registry: techstack/meta-registry.yaml 

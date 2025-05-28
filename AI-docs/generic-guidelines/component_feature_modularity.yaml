@@ -1,0 +1,9 @@
+purpose: >
+  Describes best practices for component and feature modularity in generic application development.
+main_content:
+  modularity_practices:
+    - Keep components/features small, focused, and self-contained.
+    - Use clear naming conventions and document exports.
+    - Expose only necessary APIs; encapsulate internals.
+    - Write unit tests and handle errors gracefully.
+    - Maintain consistency and periodically refactor. 

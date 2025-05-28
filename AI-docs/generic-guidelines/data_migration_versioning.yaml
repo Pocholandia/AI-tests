@@ -1,0 +1,8 @@
+purpose: >
+  Defines data migration and versioning rules for generic application development.
+main_content:
+  migration_versioning:
+    - Ensure backward compatibility and atomic migrations.
+    - Maintain migration logs and schema versioning.
+    - Use progressive schema updates and data transformers.
+    - Verify data integrity and references. 

@@ -1,0 +1,11 @@
+purpose: >
+  Provides UI component and API documentation guidelines for generic application development.
+main_content:
+  ui_component_api:
+    - Document all exported functions, components, and features with clear descriptions.
+    - Expose only what is necessary through index files; encapsulate internal details.
+    - Use clear, consistent naming conventions.
+    - Write unit tests for all components and features.
+    - Handle errors gracefully and document error handling strategies.
+    - Maintain consistency with established coding principles and patterns.
+    - Periodically review and refactor components and features for maintainability and performance. 

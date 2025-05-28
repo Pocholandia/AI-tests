@@ -1,0 +1,27 @@
+purpose: >
+  Index for generic, techstack-independent development guidelines. Provides navigation and overview of all generic rules, patterns, and best practices.
+structure:
+  overview_and_usage: overview_and_usage.yaml
+  coding_rules_best_practices: coding_rules_best_practices.yaml
+  registry_patterns: registry_patterns.yaml
+  component_feature_modularity: component_feature_modularity.yaml
+  data_specification_table_structure: data_specification_table_structure.yaml
+  data_synchronization: data_synchronization.yaml
+  data_migration_versioning: data_migration_versioning.yaml
+  design_patterns: design_patterns.yaml
+  testing_guidelines: testing_guidelines.yaml
+  meta_analysis_classification: meta_analysis_classification.yaml
+  naming_documentation_conventions: naming_documentation_conventions.yaml
+  accessibility_guidelines: accessibility_guidelines.yaml
+  error_handling_principles: error_handling_principles.yaml
+  project_feature_organization: project_feature_organization.yaml
+  ui_component_api_documentation: ui_component_api_documentation.yaml
+  general_best_practices: general_best_practices.yaml
+usage_guidelines: |
+  - Use this index to navigate to generic development guidelines.
+  - Each section provides rules, patterns, and examples for generic application development.
+  - Cross-reference app- and techstack-specific guidelines as needed.
+audience:
+  - developer
+  - AI agent
+  - documentation consumer 

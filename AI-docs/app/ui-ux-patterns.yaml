@@ -1,0 +1,36 @@
+purpose: >
+  Defines user interface and user experience patterns specific to the Preventa application.
+main_content:
+  general_aesthetics:
+    - Use modern, responsive Material UI throughout
+    - Consistent visual feedback (snackbar, tooltips)
+    - Clear validation and error messages
+    - Accessible, descriptive action buttons
+    - Optimized for desktop (modal dialogs) and mobile (full-screen forms)
+  entity_forms_lists:
+    - Single form per entity for view, insert, edit
+    - Desktop: forms in modal dialogs; mobile: full-screen dialogs
+    - Lists support pagination, filtering, quick search
+    - Filtering icon opens filter frame; dropdown for 'Inactivo' field
+    - Inactive items visually distinguished
+  detail_edit_dialogs:
+    - Detail dialogs show entity data and associated details as editable grids
+    - Edit dialogs mark required fields, show errors below invalid fields
+    - Save validates all fields; cancel returns to view mode
+  floating_action_button:
+    - Always in bottom right
+    - Only mechanism for adding new items in main sections
+  sync_status_indicators:
+    - Persistent indicator for sync status (synced, pending, offline)
+    - Icon in top bar with semantic colors
+    - Snackbar for sync errors/conflicts
+    - Overflow menu for manual sync
+    - Dialog for conflict resolution
+    - Individual sync status indicator for each list item
+  internal_identifiers:
+    - Internal IDs must not be shown to users unless specified
+    - Show descriptive data instead
+  example_entity_list_page_wireframe: |
+    See original markdown for wireframe diagram.
+  references:
+    - techstack_ui_components: ../techstack/ui-components.yaml 

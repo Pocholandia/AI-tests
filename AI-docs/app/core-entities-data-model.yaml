@@ -1,0 +1,47 @@
+purpose: >
+  Defines the main entities, fields, relationships, and constraints for the Preventa application. Serves as the canonical data model for both UI and data layer.
+main_content:
+  entities:
+    clientes:
+      fields: [Codigo, Descripcion, Contacto, Telefono, Email, Web, IDtarifa, Inactivo]
+      required: [Codigo, Descripcion]
+      unique: [Codigo]
+      deletion_constraint: "Cannot be deleted if has Pedidos; UI must offer to transfer, delete, or cancel."
+    productos:
+      fields: [Codigo, Descripcion, Precio, IVA, Inactivo]
+      required: [Codigo, Descripcion, Precio, IVA, Inactivo]
+      unique: [Codigo]
+      deletion_constraint: "Cannot be deleted if used in Tarifas or Pedidos; UI must offer to remove from Tarifas or cancel."
+    tarifas:
+      fields: [Codigo, Descripcion, Inactivo]
+      required: [Codigo, Descripcion]
+      unique: [Codigo]
+      deletion_constraint: "Cannot be deleted if in use by Clientes; UI must offer to transfer, clear, or cancel. Deleting a Tarifa deletes all its TarifasLineas."
+    tarifas_lineas:
+      fields: [IDtarifa, IDproducto, Precio]
+      required: [IDtarifa, IDproducto, Precio]
+      unique: [IDtarifa, IDproducto]
+    pedidos:
+      fields: [Numero, IDcliente, FechaHora]
+      required: [Numero, IDcliente, FechaHora]
+      deletion_constraint: "Deleting a Pedido deletes all its PedidosLineas. FechaHora is auto-generated and immutable."
+    pedidos_lineas:
+      fields: [IDpedido, IDproducto, Cantidad, Precio, Observaciones]
+      required: [IDpedido, IDproducto, Cantidad, Precio]
+  relationships:
+    - "Clientes place Pedidos"
+    - "Clientes use Tarifas"
+    - "Productos are included in PedidosLineas and TarifasLineas"
+    - "Pedidos contain PedidosLineas"
+    - "Tarifas contain TarifasLineas"
+  synchronization_fields:
+    - RecordIdent (UUID, unique)
+    - RecordVersion (string)
+    - SyncStatus (enum: synced, pending_create, pending_update, pending_delete)
+    - LastSyncDate (timestamp, ISO 8601 UTC)
+    - LocalModifiedDate (timestamp)
+    - ServerModifiedDate (timestamp)
+    - ConflictResolution (optional: local_wins, server_wins, manual)
+  additional_constraints:
+    - Referential integrity must be maintained when generating or deleting data.
+    - See validation_business_rules.yaml for field-level validation. 

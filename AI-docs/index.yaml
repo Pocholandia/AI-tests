@@ -1,0 +1,14 @@
+purpose: >
+  Root index for the Preventa documentation. Provides navigation and overview of all documentation sets: application-specific, generic, and techstack guidelines.
+sections:
+  application_specific: app/index.yaml
+  generic_guidelines: generic-guidelines/index.yaml
+  techstack_guidelines: techstack/index.yaml
+usage_guidelines: |
+  - Start here to navigate to the relevant documentation set for your needs.
+  - Each section provides rules, patterns, and best practices for its domain.
+  - Use cross-references for deeper dives into related topics.
+audience:
+  - developer
+  - AI agent
+  - documentation consumer 

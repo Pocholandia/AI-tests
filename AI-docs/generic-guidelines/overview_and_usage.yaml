@@ -1,0 +1,11 @@
+purpose: >
+  Provides an overview of the generic development guidelines and instructions for their use.
+main_content:
+  usage:
+    - Guidelines are mandatory for all projects using this techstack.
+    - Review all documents before starting development.
+    - Follow guidelines in implementation and code reviews.
+    - Propose updates when improvements are identified.
+    - Keep documents up-to-date with industry best practices.
+    - Document any deviations in project-specific documentation.
+    - Review and update guidelines periodically. 

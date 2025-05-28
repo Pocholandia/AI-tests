@@ -1,0 +1,40 @@
+purpose: >
+  Defines data modeling conventions, field types, and synchronization rules for offline-first applications.
+main_content:
+  branded_types:
+    - Use branded types for domain-specific fields to ensure type safety
+    - Prevents accidental mixing of identifiers across domains
+  field_types_table_structure:
+    - All tables must have RecordIdent (unique, primary key) and RecordVersion (incremented on update)
+    - Do not use a generic ID field; always use RecordIdent
+    - Optional fields: Inactivo, Codigo, Serie, Numero, Descripcion, Observaciones, empresa, ejercicio
+    - Relationships use IDtabla fields referencing RecordIdent of related tables
+  synchronization_fields:
+    - SyncStatus: enum [synced, pending_create, pending_update, pending_delete]
+    - LastSyncDate: ISO 8601 timestamp
+    - LocalModifiedDate: ISO 8601 timestamp
+    - ServerModifiedDate: ISO 8601 timestamp
+    - ConflictResolution (optional): enum [local_wins, server_wins, manual]
+  offline_first_sync_rules:
+    - Local-first: all data is stored and modified locally, then synced
+    - Unique identifiers must be universally unique (UUIDs or similar)
+    - Track all changes while offline for later sync
+    - Conflict detection based on version and timestamps
+    - Automatic and manual conflict resolution supported
+    - Schema migrations must be atomic and tracked
+  examples:
+    branded_type_definition: |
+      type tipoID = string & { __brand: 'tipoID' };
+    table_fields: |
+      {
+        RecordIdent: tipoID;
+        RecordVersion: tipoVersion;
+        SyncStatus: 'synced' | 'pending_create' | ...;
+        // ...other fields
+      }
+usage_guidelines: |
+  - Apply branded types for all domain-specific fields
+  - Ensure all tables include required sync fields
+  - Use atomic migrations for schema changes
+revision_policy: >
+  Update when changing data modeling conventions or sync logic. 

@@ -1,0 +1,10 @@
+purpose: >
+  Provides general best practices for generic application development.
+main_content:
+  best_practices:
+    - Register and document all pluggable components at startup.
+    - Use clear, namespaced keys for organization.
+    - Always provide fallbacks for robustness.
+    - Favor explicit contracts and interfaces for all components and data.
+    - Design for testability, maintainability, and extensibility from the start.
+    - Prioritize user feedback, error handling, and offline support in all designs. 

@@ -1,0 +1,16 @@
+purpose: >
+  Defines naming and documentation conventions for generic application development.
+main_content:
+  naming_conventions:
+    - Use kebab-case for files and directories.
+    - Use snake_case for fields.
+    - Use clear, descriptive text for string values.
+    - Use true/false for booleans.
+    - Maintain consistent item format in lists.
+  documentation_conventions:
+    - State everything directly; don't rely on inference.
+    - Use structured data patterns instead of paragraphs.
+    - Use the same patterns for similar concepts throughout.
+    - Prioritize completeness over brevity.
+    - Documentation should explain its own organization.
+    - Include criteria for validating implementation. 

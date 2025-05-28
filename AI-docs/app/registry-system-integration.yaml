@@ -1,0 +1,16 @@
+purpose: >
+  Explains how Preventa features integrate with the Registry System for dynamic forms, selectors, and metadata.
+main_content:
+  entity_registration:
+    - Each feature registers its entity type with the registry in its index.ts
+    - Example: see original markdown for TypeScript code
+  field_type_resolvers:
+    - Features can provide custom field type resolvers for special fields
+    - Example: see original markdown for TypeScript code
+    - Register resolver with the registry factory
+  best_practices:
+    - Keep all registry-related code within the feature directory
+    - Only expose necessary functions/types via index.ts
+    - Document and test custom resolvers
+  references:
+    - feature_organization: feature-organization.yaml 

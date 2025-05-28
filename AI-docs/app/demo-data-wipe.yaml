@@ -1,0 +1,30 @@
+purpose: >
+  Describes demo data generation and data wipe processes in the Preventa application.
+main_content:
+  demo_data_generation:
+    - Accessed via overflow menu
+    - Single form with grid for each table: Productos, Tarifas, Clientes, Pedidos
+    - Editable box for number of records to generate
+    - Default values: 50 (Productos), 9 (Tarifas), 150 (Clientes), 300 (Pedidos)
+    - Data generated in order to maintain referential integrity
+    - Data must be realistic and representative of the Spanish market
+  generation_rules:
+    productos:
+      - Random price 1-100
+      - Spanish product names
+    tarifas:
+      - Each tarifa gets TarifasLineas for products, random price factors
+    clientes:
+      - 50% companies, 50% people
+      - Realistic names/emails
+      - 70% assigned a tarifa
+    pedidos:
+      - Each assigned to random client
+      - 5-15 lines per order
+      - Lines use random products and quantities
+  data_wipe:
+    - Accessed via overflow menu
+    - Option to delete all clients (and related data)
+    - Confirmation required before wiping
+  demo_data_form_ui: |
+    See original markdown for UI wireframe. 

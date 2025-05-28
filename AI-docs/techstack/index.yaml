@@ -1,0 +1,20 @@
+purpose: >
+  Index for techstack-specific development guidelines. Provides navigation and overview of all techstack rules, patterns, and best practices.
+structure:
+  frontend_architecture: frontend-architecture.yaml
+  ui_components: ui-components.yaml
+  state_management: state-management.yaml
+  data_modeling_sync: data-modeling-sync.yaml
+  registry_plugin_systems: registry-plugin-systems.yaml
+  database_integration: database-integration.yaml
+  feature_organization: feature-organization.yaml
+  testing_quality: testing-quality.yaml
+  meta_registry: meta-registry.yaml
+usage_guidelines: |
+  - Use this index to navigate to techstack-specific documentation.
+  - Each section provides actionable rules, patterns, and examples for the techstack.
+  - Cross-reference generic and app-specific guidelines as needed.
+audience:
+  - developer
+  - AI agent
+  - documentation consumer 

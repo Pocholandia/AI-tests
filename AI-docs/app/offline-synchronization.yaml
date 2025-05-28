@@ -1,0 +1,29 @@
+purpose: >
+  Describes offline synchronization process, conflict resolution, and error handling for the Preventa application.
+main_content:
+  sync_workflow:
+    - Identify pending changes in local DB (SyncStatus ≠ "synced")
+    - Group by entity type
+    - Upload pending changes to server
+    - Download server changes since last sync
+    - Detect and resolve conflicts
+    - Update local DB and sync status
+    - Generate sync report and update UI
+  conflict_resolution:
+    - Conflicts detected if both local and server versions changed, or deletion/creation conflicts
+    - Strategies: local_wins, server_wins, manual
+    - Manual: UI presents conflicting fields, user selects resolution
+  error_handling:
+    - Automatic retry with exponential backoff (3 attempts)
+    - Rollback transaction if all retries fail
+    - Persist error state for later resumption
+    - Sync log with timestamps and results
+    - Manual sync reset for admins
+  sync_manager_example: |
+    See original markdown for TypeScript code example.
+  ui_feedback:
+    - Persistent sync status indicator (synced, pending, offline)
+    - Snackbar for sync errors/conflicts
+    - Dialog for manual conflict resolution
+  references:
+    - error_handling_feedback: error-handling-feedback.yaml 

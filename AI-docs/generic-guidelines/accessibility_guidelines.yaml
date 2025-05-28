@@ -1,0 +1,9 @@
+purpose: >
+  Provides accessibility guidelines for generic application development.
+main_content:
+  accessibility:
+    - Use ARIA attributes and roles for all interactive elements.
+    - Ensure keyboard navigation for all UI components.
+    - Maintain minimum contrast ratios for text and UI elements.
+    - Test with screen readers and assistive technologies.
+    - Extend accessibility props in custom components. 
